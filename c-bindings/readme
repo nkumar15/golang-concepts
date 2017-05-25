@@ -1,0 +1,10 @@
+compile math code to create shared library
+gcc -c -Wall -Werror -fpic math.c
+gcc -shared -o math.dll foo.o
+
+test shared library with C code
+gcc -L/home/username/foo -Wall -o test main.c -lmath.dll
+
+test shared library with go code
+go build main.go
+
